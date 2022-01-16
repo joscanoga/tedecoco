@@ -1,12 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template
 
+from diagrama import diagrama
+from page import  page
 app = Flask(__name__)
 
-
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def index():
+    pagina=page(diagrama().sacar_componentes())
+    print(pagina.preguntas)
+    return render_template("index.html",preguntas=pagina.preguntas)
+
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
