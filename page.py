@@ -22,4 +22,4 @@ class page:
 
 
 
-newpage= page(diagrama.diagrama().sacar_componentes())
+page(diagrama.diagrama().sacar_componentes())

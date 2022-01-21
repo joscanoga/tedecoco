@@ -17,8 +17,44 @@
         <form method="post">
             <h2 class="visually-hidden"></h2><div class="illustration"></div>
             {%for i in preguntas  %}
-                {% if i.value =="abierta" %}
-                    <div class="mb-3"><input class="form-control" type={{  i.ajustes['input']}}  placeholder={{  i.ajustes['pregunta']}}></div>
+                {% if i.value =="tipo1" %}
+
+                    <div class="mb-3">
+                        <label for={{ i.ajustes["id"] }}> {{ i.ajustes["pregunta"] }}</label>
+                        <input class="form-control" type={{  i.ajustes['input']}} name={{ i.ajustes["id"] }} placeholder={{  i.ajustes['pregunta']}}></div>
+
+                {% elif i.value =="tipo2" %}
+                    <div class="mb-3">
+                        <label for={{ i.ajustes["id"] }}> {{ i.ajustes["pregunta"] }}</label>
+                    <select class="form-select form-select-sm" name={{ i.ajustes["id"] }}>
+                        <option value="opcion1">{{ i.ajustes["opcion1"] }}</option>
+                        <option value="opcion2" >{{ i.ajustes["opcion2"] }}</option>
+                        {% if  i.ajustes["opcion3"]  %}
+                        <option value="opcion3" >{{ i.ajustes["opcion3"] }}</option>
+
+                        {% endif  %}
+                    {% if  i.ajustes["opcion4"]  %}
+                        <option value="opcion4" >{{ i.ajustes["opcion4"] }}</option>
+
+                        {% endif  %}
+                    </select>
+                    </div>
+                {% elif i.value =="tipo3" %}
+                    <div class="mb-3">
+                        <label for={{ i.ajustes["id"] }}> {{ i.ajustes["pregunta"] }}</label><br>
+
+                    <input type="radio" name={{ i.ajustes["id"] }} value="opcion1"> {{ i.ajustes["opcion1"] }}<br>
+                    <input type="radio" name={{ i.ajustes["id"] }} value="opcion2"> {{ i.ajustes["opcion2"] }}<br>
+                        {% if  i.ajustes["opcion3"]| length >0  %}
+                        <input type="radio" name={{ i.ajustes["id"] }} value="opcion3"> {{ i.ajustes["opcion3"] }}<br>
+
+                        {% endif  %}
+                    {% if  i.ajustes["opcion4"]  %}
+                        <input type="radio" name={{ i.ajustes["id"] }} value="opcion4"> {{ i.ajustes["opcion4"] }}<br>
+
+                        {% endif  %}
+
+                    </div>
                 {% endif %}
             {% endfor %}
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>

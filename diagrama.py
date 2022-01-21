@@ -21,3 +21,4 @@ class diagrama:
                 df=df.append({"id":id,"parent":parent,"value":value}, ignore_index=True)
 
         return df
+

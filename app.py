@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     pagina=page(diagrama().sacar_componentes())
-    print(pagina.preguntas)
+
     return render_template("index.html",preguntas=pagina.preguntas)
 
 
