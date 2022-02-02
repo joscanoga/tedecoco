@@ -5,9 +5,9 @@ from xml.dom import minidom
 
 
 
-def leer_estructura_basica():
+def leer_estructura_basica(filename):
     # leemos el xml
-    file = ET.parse("Proyecto_Tedecoco.drawio.xml").getroot()
+    file = ET.parse("data/xml/{}.xml".format(filename)).getroot()
     #estraemos el diagrama
     return file.findall("diagram/mxGraphModel/")
 

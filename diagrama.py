@@ -5,8 +5,8 @@ import pandas as pd
 class diagrama:
 
 
-    def __init__(self):
-        self.file=estructura_xml.leer_estructura_basica()
+    def __init__(self,filename="Proyecto_Tedecoco.drawio.xml"):
+        self.file=estructura_xml.leer_estructura_basica(filename)
 
 
 
