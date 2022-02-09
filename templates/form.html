@@ -44,14 +44,14 @@
                     <div class="mb-3">
                         <label for={{ i.ajustes["id"] }}> {{ i.ajustes["pregunta"] }}</label><br>
 
-                    <input type="radio" name={{ i.ajustes["id"] }} value="opcion1"> {{ i.ajustes["opcion1"] }}<br>
-                    <input type="radio" name={{ i.ajustes["id"] }} value="opcion2"> {{ i.ajustes["opcion2"] }}<br>
+                    <input type="radio" name={{ i.ajustes["id"] }} value="{{ i.ajustes["opcion1"] }}"> {{ i.ajustes["opcion1"] }}<br>
+                    <input type="radio" name={{ i.ajustes["id"] }} value="{{ i.ajustes["opcion1"] }}"> {{ i.ajustes["opcion2"] }}<br>
                         {% if  i.ajustes["opcion3"]| length >0  %}
-                        <input type="radio" name={{ i.ajustes["id"] }} value="opcion3"> {{ i.ajustes["opcion3"] }}<br>
+                        <input type="radio" name={{ i.ajustes["id"] }} value="{{ i.ajustes["opcion1"] }}"> {{ i.ajustes["opcion3"] }}<br>
 
                         {% endif  %}
                     {% if  i.ajustes["opcion4"]  %}
-                        <input type="radio" name={{ i.ajustes["id"] }} value="opcion4"> {{ i.ajustes["opcion4"] }}<br>
+                        <input type="radio" name={{ i.ajustes["id"] }} value="{{ i.ajustes["opcion1"] }}"> {{ i.ajustes["opcion4"] }}<br>
 
                         {% endif  %}
 
